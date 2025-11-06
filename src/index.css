@@ -22,7 +22,7 @@
 /* ========== Mobile View ========== */
 @media (max-width: 768px) {
   .navbar-links {
-    position: absolute;
+    position: fixed;
     top: 65px;
     right: 0;
     background-color: var(--dark-green);

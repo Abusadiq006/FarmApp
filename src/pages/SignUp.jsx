@@ -16,6 +16,34 @@ const Signup = () => {
         setFormData({ fullname: "", email: "", password: ""})
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        // Validation checks
+        if (!formData.name || !formData.email || !formData.password) {
+            alert("Please fill in all fields")
+            return
+        }
+
+        if (formData.password !== formData.confirmPassword) {
+            alert("Passwords do not match!")
+            return
+        }
+
+
+        // Simulated success (later we'll connect Firebase here)
+        console.log("Signup Data", formData)
+        alert("Signup successfull Welcome to Green Farm")
+
+
+        // Reset form
+        setFormData({
+            name: "",
+            email: "",
+            password: "",
+        })
+    }
+
     return (
         <section className="signup fade-in">
             <h2>Create Your Green Farm Account</h2>
