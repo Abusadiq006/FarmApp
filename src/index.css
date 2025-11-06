@@ -1,0 +1,188 @@
+/* ===== Import App Theme ===== */
+@import url('./App.css');
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary-green);
+  padding: 0.8rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.navbar-logo img {
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--white);
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar-links a, .navbar-links button {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-speed);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar-links a:hover,
+.navbar-links button:hover {
+  color: var(--light-green);
+}
+
+/* ===== Footer ===== */
+.footer {
+  background-color: var(--dark-green);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.95rem;
+  border-top: 2px solid var(--primary-green);
+}
+
+/* ===== Home Page ===== */
+.home {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.home h1 {
+  color: var(--dark-green);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.home p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--text-dark);
+}
+
+/* ===== Signup Page ===== */
+.signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+}
+
+.signup h2 {
+  color: var(--dark-green);
+  margin-bottom: 1.5rem;
+}
+
+.signup form {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.signup input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--primary-green);
+  border-radius: var(--radius);
+}
+
+/* ===== Login Page ===== */
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+}
+
+.login h2 {
+  color: var(--dark-green);
+  margin-bottom: 1.5rem;
+}
+
+.login form {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--primary-green);
+  border-radius: var(--radius);
+}
+
+/* ===== Dashboard ===== */
+.dashboard {
+  padding: 3rem;
+}
+
+.dashboard h2 {
+  color: var(--dark-green);
+  margin-bottom: 1rem;
+}
+
+.dashboard-content {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.dashboard-card {
+  background: var(--white);
+  border: 1px solid var(--primary-green);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform var(--transition-speed);
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== About Page ===== */
+.about {
+  padding: 3rem;
+  text-align: center;
+}
+
+.about h2 {
+  color: var(--dark-green);
+  margin-bottom: 1rem;
+}
+
+.about p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--text-dark);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
