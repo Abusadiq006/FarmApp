@@ -8,7 +8,7 @@ const Footer = () => {
         <footer className="footer fade-in">
             <p>© {year} Green Farm. All rights reserved.</p>
             <p>
-                Built with by <strong>Farmer Abusadiq</strong>
+                Built by <strong>Farmer Abusadiq</strong>
             </p>
         </footer>
     )

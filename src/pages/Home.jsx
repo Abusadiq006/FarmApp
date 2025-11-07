@@ -12,7 +12,30 @@ const Home = () => {
         eco-friendly farming practices that ensure a greener tomorrow.
             </p>
 
-            <div style={{}}>
+            <div className="home fade-in">
+                <h1 className="home-title">Our Fresh Produce</h1>
+                <li className="home">
+                    *SweetCorn*
+                </li>
+                    <li className="home">
+                        *Tomatoes*
+                    </li>
+                
+                <li className="home">
+                    *Bell Pepper*
+                </li>
+                <li className="home">
+                    *Hebanero*
+                </li>
+                <li className="home">
+                        *Sweet Patatoes*
+                </li>
+                <li className="home">
+                       *Maize*
+                </li>
+            </div>
+
+            <div style={{ marginTop: "3rem"}}>
                 <button>Explore Our Farms</button>
             </div>
         </section>

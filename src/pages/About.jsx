@@ -19,6 +19,13 @@ const About = () => {
                 guided by our commitment to nature.
             </p>
 
+            <div className="about">
+                Contact Us Through
+
+                <li style={{ marginTop: "2rem"}}>Email: <a href="#mail">Abusadiq006@gmail.com </a></li>
+                <li></li>
+            </div>
+
             <div style={{ marginTop: "2rem" }}>
                 <button>Learn More</button>
             </div>
