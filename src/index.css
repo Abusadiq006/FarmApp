@@ -124,6 +124,57 @@
 .home {
   text-align: center;
   padding: 3rem 1rem;
+  background: linear-gradient(
+    to bottom right,
+    var(--light-green),
+    var(--white)
+  );
+  border-radius: var(--radius);
+  margin-top: 80px;
+}
+
+.home-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dark-green);
+  margin-bottom: 2rem;
+}
+
+.produce-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.produce-list li {
+  background-color: var(--primary-green);
+  color: var(--white);
+  padding: 1rem;
+  border-radius: var(--radius);
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: transform var(--transition-speed), background-color var(--transition-speed);
+}
+
+.produce-list li:hover {
+  background-color: var(--dark-green);
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .home-title {
+    font-size: 1.5rem;
+  }
+
+  .produce-list {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
 }
 
 .home h1 {

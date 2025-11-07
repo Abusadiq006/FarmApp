@@ -14,25 +14,14 @@ const Home = () => {
 
             <div className="home fade-in">
                 <h1 className="home-title">Our Fresh Produce</h1>
-                <li className="home">
-                    *SweetCorn*
-                </li>
-                    <li className="home">
-                        *Tomatoes*
-                    </li>
-                
-                <li className="home">
-                    *Bell Pepper*
-                </li>
-                <li className="home">
-                    *Hebanero*
-                </li>
-                <li className="home">
-                        *Sweet Patatoes*
-                </li>
-                <li className="home">
-                       *Maize*
-                </li>
+                <ul className="produce-list">
+                    <li> *SweetCorn* </li>
+                    <li> *Tomatoes* </li>
+                    <li> *Bell Pepper* </li>
+                    <li> *Hebanero* </li>
+                    <li> *Sweet Patatoes* </li>
+                    <li> *Maize* </li>
+                </ul>
             </div>
 
             <div style={{ marginTop: "3rem"}}>
