@@ -4,8 +4,8 @@ import "../index.css"; // optional if you want extra style control later
 const Dashboard = () => {
   const farmData = {
     crops: [
-      { name: "Rice", img: "/images/ricecrop.jpeg", desc: "Golden rice grown in sustainable paddies." },
-      { name: "Tomatoes", img: "/images/Tomatoes.jpg", desc: "Organic red tomatoes rich in flavor." },
+      { name: "Rice", img: "/crops/ricecrop.jpeg", desc: "Golden rice grown in sustainable paddies." },
+      { name: "Tomatoes", img: "/crops/Tomatoes.jpg", desc: "Organic red tomatoes rich in flavor." },
       { name: "Sweet Corn", img: "/images/sweetcorn.jpeg", desc: "Juicy sweet corn harvested in season." },
       { name: "Sweet Potatoes", img: "/images/sweetpotatoes.jpg", desc: "Fresh Irish potatoes from our highlands." },
       { name: "Cucumber", img: "/images/cucumber.jpg", desc: "Crisp cucumbers for salads and pickles." },
@@ -16,8 +16,8 @@ const Dashboard = () => {
       { name: "Habanero", img: "/images/habanero.jpg",}
     ],
     flowers: [
-      { name: "Rose", img: "/images/rose.jpg", desc: "Classic red roses for romance and beauty." },
-      { name: "Sunflower", img: "/images/sunflower.jpg", desc: "Tall bright sunflowers symbolizing warmth." },
+      { name: "Rose", img: "/flowers/rose.jpeg", desc: "Classic red roses for romance and beauty." },
+      { name: "Sunflower", img: "/flowers/sunflower.jpeg", desc: "Tall bright sunflowers symbolizing warmth." },
       { name: "Lily", img: "/images/lily.jpg", desc: "Graceful lilies for elegant gardens." },
       { name: "Daisy", img: "/images/daisy.jpg", desc: "Pure white daisies that brighten the farm." },
       { name: "Tulip", img: "/images/tulip.jpg", desc: "Colorful tulips grown in natural beds." },
