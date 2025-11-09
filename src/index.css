@@ -146,44 +146,55 @@
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1.5rem;
   padding: 0;
-  margin: 0 auto;
+  margin: 2rem auto;
   max-width: 900px;
 }
 
 .produce-list li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--white);
-  color: var(--white);
+  position: relative;
+  overflow: hidden;
   border-radius: var(--radius);
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
   cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .produce-list li:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .produce-list img {
   width: 100%;
-  height: 120px;
+  height: 140px;
   object-fit: cover;
-  border-top-left-radius: var(--radius);
-  border-top-right-radius: var(--radius);
+  border-radius: var(--radius);
+  filter: brightness(95%);
+  transition: filter 0.3s ease;
+}
+
+.produce-list li:hover img {
+  filter: brightness(70%);
 }
 
 .produce-list span {
-  padding: 0.8rem;
-  font-weight: 600;
-  color: var(--dark-green);
-  background-color: var(--light-green);
+  position: absolute;
+  bottom: -40px;
+  left: 0;
   width: 100%;
   text-align: center;
-  border-bottom-left-radius: var(--radius);
-  border-bottom-right-radius: var(--radius);
+  padding: 0.8rem 0;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(3px);
+  transition: all 0.4s ease;
+  opacity: 0;
+}
+
+.produce-list li:hover span {
+  bottom: 0;
+  opacity: 1;
 }
 
 /* Responsive tweaks */
@@ -197,7 +208,7 @@
   }
 
   .produce-list img {
-    height: 100%;
+    height: 110px;
   }
 
   .produce-list span {
@@ -324,4 +335,23 @@
   color: var(--text-dark);
   font-size: 1.1rem;
   line-height: 1.6;
+}
+
+.explore-btn {
+  display: block;
+  margin: 2rem auto;
+  background-color: var(--primary-green);
+  color: var(--white);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: var(--radius);
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-speed);
+}
+
+.explore-btn:hover {
+  background-color: var(--dark-green);
+  transform: scale(1.05);
 }

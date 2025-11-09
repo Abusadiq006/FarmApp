@@ -1,4 +1,5 @@
 import React from "react"
+import { useNavigate } from "react-router-dom"
 import "../index.css"
 import bellpepper from "../assets/bellpepper.jpg"
 import cucumber from "../assets/cucumber.jpg"
@@ -9,6 +10,12 @@ import tomatoes from "../assets/tomatoes.jpg"
 
 
 const Home = () => {
+    const navigate = useNavigate()
+
+    const handleExplore = () => {
+        navigate("/signup")
+    }
+    
     return (
         <section className="home fade-in">
             <h1>Welcome to Green Farm</h1>
@@ -48,9 +55,8 @@ const Home = () => {
                 </ul>
             </div>
 
-            <div style={{ marginTop: "3rem"}}>
-                <button>Explore Our Farms</button>
-            </div>
+            <button className="explore-btn" 
+            onClick={handleExplore}>Explore Our Farms</button>
         </section>
     )
 }

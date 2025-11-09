@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../index.css"
 
 
 const Login = () => {
+    const navigate = useNavigate()
     const [credentials, setCredentials] = useState({
         email: "",
         password: "",
@@ -15,14 +17,30 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+
+        // Basic validation
+        if (!credentials.email || !credentials.password) {
+            alert("Please fill in all fields")
+            return 
+        }
+
+        // You can replace this logic later with real authentication
         console.log("Login Data:", credentials)
-        alert("Login successful!")
-        setCredentials({ email: "", password: "" })
+
+        if (credentials.email && credentials.password) {
+            alert("Login successful! Redirecting to Dashboard...")
+            setCredentials({ email: "", password: "" })
+
+            // Navigate to dashboard after login
+            navigate("/dashboard")
+        } else {
+            alert("Invalid credentials, please try again.")
+        }
     }
 
     return (
         <section className="login fade-in">
-            <h2>Welcome Back to Green Farm</h2>
+            <h2>Login to Green Farm</h2>
             <form onSubmit={handleSubmit}>
                 <input type="email"
                     name="email"
