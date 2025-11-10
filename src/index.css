@@ -355,3 +355,109 @@
   background-color: var(--dark-green);
   transform: scale(1.05);
 }
+
+/* ==== General Dashboard Animation ==== */
+.fade-in {
+  animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==== Dashboard Layout ==== */
+.dashboard {
+  padding: 3rem 1.5rem;
+  background: linear-gradient(180deg, #f8fff8 0%, #f2fff5 100%);
+  min-height: 100vh;
+}
+
+
+/* ==== Section Titles ==== */
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  text-align: center;
+  color: #1a5d2f;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: #2f855a;
+  margin: 0.75rem auto 0;
+  border-radius: 2px;
+}
+
+/* ==== Card Grid ==== */
+.card-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  justify-items: center;
+  margin-bottom: 4rem;
+}
+
+/* ==== Farms Cards ==== */
+.farm-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  max-width: 320px;
+  transform: translateY(0);
+}
+
+.farm-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* ==== Farm Images ==== */
+.farm-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.farm-card:hover img {
+  transform: scale(1.1);
+}
+
+
+/* ==== Farm Info ==== */
+.farm-card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #14532d;
+  margin-top: 1rem;
+}
+
+.farm-card p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  padding: 0.5rem 1rem 1.5rem;
+  line-height: 1.5;
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .farm-card img {
+    height: 180px;
+  }
+}
