@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../index.css";
-import { useNavigate } from "react-router-dom"
 
 const Dashboard = () => {
-    const navigate = useNavigate()
   const [selectedItem, setSelectedItem] = useState(null);
+  const navigate = useNavigate()
+
+  const handleBackHome = () => navigate("/")
 
   const farmData = {
     crops: [
@@ -79,7 +81,15 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="dashboard fade-in p-6">
+    <div className="dashboard fade-in p-6 relative">
+        {/* Back To Home Button */}
+        <button
+            onClick={handleBackHome}
+            className="fixed top-6 right-6 bg-green-700 text-white 
+            font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-green-800 
+            transition-all duration-300 z-50">
+                ← Back to Home
+            </button>
       {Object.entries(farmData).map(([category, items]) => (
         <section key={category} className="farm-section mb-10">
           <h2 className="section-title text-3xl font-bold mb-4 text-green-700">{category.toUpperCase()}</h2>
