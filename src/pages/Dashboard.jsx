@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "../index.css";
 
 const Dashboard = () => {
   const [selectedItem, setSelectedItem] = useState(null);
+  const [activeRef, setActiveRef] = useState(null)
+  const modalRef = useRef(null)
   const navigate = useNavigate()
 
   const handleBackHome = () => navigate("/")
@@ -80,42 +82,57 @@ const Dashboard = () => {
     ],
   };
 
+  const handleCardClick = (item, ref) => {
+    setSelectedItem(item)
+    setActiveRef(ref)
+  
+
+  setTimeout(() => {
+    modalRef.current?.scrollIntoView({ behavior: "smooth", block: "center" })
+  }, 200)
+}
+
+const handleCloseModal = () => {
+    setSelectedItem(null)
+    if (activeRef?.current) {
+        setTimeout(() => {
+            activeRef.current.scrollIntoView({ behavior: "smooth", block: "center" })
+        })
+    }
+}
+
   return (
-    <div className="dashboard fade-in p-6 relative">
-        {/* Back To Home Button */}
-        <button
-            onClick={handleBackHome}
-            className="fixed top-6 right-6 bg-green-700 text-white 
-            font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-green-800 
-            transition-all duration-300 z-50">
-                ← Back to Home
-            </button>
+    <div className="dashboard fade-in p-6">
       {Object.entries(farmData).map(([category, items]) => (
         <section key={category} className="farm-section mb-10">
           <h2 className="section-title text-3xl font-bold mb-4 text-green-700">{category.toUpperCase()}</h2>
           <div className="card-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {items.map((item, index) => (
-              <div
-                key={index}
-                className="farm-card bg-white rounded-2xl overflow-hidden shadow-lg cursor-pointer transform transition duration-300 hover:scale-105 hover:shadow-2xl"
-                onClick={() => setSelectedItem(item)}
-              >
-                <img src={item.img} alt={item.name} className="h-48 w-full object-cover" />
-                <div className="p-4">
-                  <h3 className="text-xl font-semibold text-green-800">{item.name}</h3>
-                  <p className="text-gray-600 text-sm mt-2">{item.desc}</p>
+            {items.map((item, index) => {
+              const cardRef = useRef(null);
+              return (
+                <div
+                  key={index}
+                  ref={cardRef}
+                  className="farm-card bg-white rounded-2xl overflow-hidden shadow-lg cursor-pointer transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+                  onClick={() => handleCardClick(item, cardRef)}
+                >
+                  <img src={item.img} alt={item.name} className="h-48 w-full object-cover" />
+                  <div className="p-4">
+                    <h3 className="text-xl font-semibold text-green-800">{item.name}</h3>
+                    <p className="text-gray-600 text-sm mt-2">{item.desc}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
       ))}
 
-      {/* Lesson Modal */}
       {selectedItem && (
         <div
+          ref={modalRef}
           className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
-          onClick={() => setSelectedItem(null)}
+          onClick={handleCloseModal}
         >
           <div
             className="bg-white rounded-xl max-w-lg w-full p-6 relative"
@@ -123,7 +140,7 @@ const Dashboard = () => {
           >
             <button
               className="absolute top-3 right-3 text-gray-600 hover:text-black text-2xl"
-              onClick={() => setSelectedItem(null)}
+              onClick={handleCloseModal}
             >
               &times;
             </button>
@@ -137,5 +154,6 @@ const Dashboard = () => {
     </div>
   );
 };
+
 
 export default Dashboard;
