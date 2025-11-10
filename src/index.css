@@ -373,6 +373,22 @@
   min-height: 100vh;
 }
 
+/* ==== Alternating Section Backgrounds ==== */
+.farm-section:nth-child(odd) {
+  background: #f6fff6;
+}
+
+.farm-section:nth-child(even) {
+  background: #fffdf5;
+}
+
+.farm-section {
+  padding: 3rem 5rem;
+  border-radius: 15px;
+  margin-bottom: 3rem;
+  transition: background 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
 
 /* ==== Section Titles ==== */
 .section-title {
