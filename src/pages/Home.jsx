@@ -11,8 +11,14 @@ const Home = () => {
     }
 
     const sections = [
-        { title: "Farming", video: "/videos/crops.mp4", desc: "Sustainable crop cultivation for a greener world."}
-
+        { title: "Farming", video: "/videos/crops.mp4", desc: "Sustainable crop cultivation for a greener world."},
+        { title: "chicken", video: "/videos/chicken.mp4"},
+        { title: "cows", video: "/videos/cows.mp4"},
+        { title: "farmhouse", video: "/videos/farmhouse.mp4"},
+        { title: "fish", video: "/videos/fish.mp4"},
+        { title: "flowers", video: "/videos/flowers.mp4"},
+        { title: "horse", video: "/videos/horse.mp4"},
+        {title: "sheeps", video: "/videos/sheeps.mp4"}
     ]
     
     return (
@@ -40,16 +46,20 @@ const Home = () => {
                         onMouseLeave={(e) => e.target.pause()}></video>
                         <div className="overlay"></div>
                         <div className="video-content">
-                            <h2></h2>
+                            <h2>{item.title}</h2>
+                            <p>{item.desc}</p>
                         </div>
                     </div>
                 ))}
             </div>
             
 
-            <button className="explore-btn" 
-            onClick={handleExplore}>Explore Our Farms</button>
-        </section>
+            <div className="explore-section">
+                <button className="explore-btn"
+                onClick={handleExplore}>Explore Our Farms</button>
+            
+            </div>    
+            </section>
     )
 }
 
