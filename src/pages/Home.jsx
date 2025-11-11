@@ -18,7 +18,7 @@ const Home = () => {
     
     return (
         <section className="home fade-in">
-            <h1>Welcome to Green Farm</h1>
+            <h1>Welcome to Green Valley Farm Estate</h1>
             <p>
                 At Green Farm, we believe in growing fresh, sustainable, and organic
         produce that nourishes both people and the planet. Our commitment is to
