@@ -1,12 +1,6 @@
 import React from "react"
 import { useNavigate } from "react-router-dom"
 import "../index.css"
-import bellpepper from "../assets/bellpepper.jpg"
-import cucumber from "../assets/cucumber.jpg"
-import habanero from "../assets/habanero.jpg"
-import sweetcorn from "../assets/sweetcorn.jpeg"
-import sweetpotatoes from "../assets/sweetpotatoes.jpg"
-import tomatoes from "../assets/tomatoes.jpg"
 
 
 const Home = () => {
@@ -15,45 +9,43 @@ const Home = () => {
     const handleExplore = () => {
         navigate("/signup")
     }
+
+    const sections = [
+        { title: "Farming", video: "/videos/crops.mp4", desc: "Sustainable crop cultivation for a greener world."}
+
+    ]
     
     return (
         <section className="home fade-in">
-            <h1>Welcome to Green Valley Farm Estate</h1>
-            <p>
-                At Green Farm, we believe in growing fresh, sustainable, and organic
-        produce that nourishes both people and the planet. Our commitment is to
-        eco-friendly farming practices that ensure a greener tomorrow.
-            </p>
-
-            <div className="home fade-in">
-                <h1 className="home-title">Our Fresh Produce</h1>
-                <ul className="produce-list">
-                    <li> 
-                        <img src={sweetcorn} alt="Sweet Corn" />
-                        <span> *SweetCorn* </span> 
-                    </li>
-                    <li>
-                        <img src={tomatoes} alt="Tomatoes" />
-                        <span> *Tomatoes* </span>  
-                    </li>
-                    <li>
-                        <img src={bellpepper} alt="Bell Pepper" />
-                        <span> *Bell Pepper* </span> 
-                    </li>
-                    <li> 
-                        <img src={habanero} alt="habanero" />
-                        <span> *Habanero* </span> 
-                    </li>
-                    <li> 
-                        <img src={sweetpotatoes} alt="Sweet Potatoes" />
-                        <span> *Sweet Patatoes* </span> 
-                    </li>
-                    <li> 
-                        <img src={cucumber} alt="cucumber" />
-                        <span> *Cucumber* </span> 
-                    </li>
-                </ul>
+            <div className="intro-section">
+                <h1 className="intro-title">Welcome to Green Valley Farm Estate</h1>
+                    <p className="intro-text">
+                    At Green Farm, we believe in growing fresh, sustainable, and organic
+                    produce that nourishes both people and the planet. Our commitment is to
+                    eco-friendly farming practices that ensure a greener tomorrow.
+                </p>
             </div>
+
+            <div className="video-grid">
+                {sections.map((item, index) => (
+                    <div key={index} 
+                    className={`video-card diagonal delay-${index}`}>
+                        <video 
+                        src={item.video}
+                        muted 
+                        loop
+                        preload="none"
+                        className="video-element"
+                        onMouseEnter={(e) => e.target.play()}
+                        onMouseLeave={(e) => e.target.pause()}></video>
+                        <div className="overlay"></div>
+                        <div className="video-content">
+                            <h2></h2>
+                        </div>
+                    </div>
+                ))}
+            </div>
+            
 
             <button className="explore-btn" 
             onClick={handleExplore}>Explore Our Farms</button>
