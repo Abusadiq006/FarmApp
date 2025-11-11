@@ -579,3 +579,59 @@ button.fixed:hover {
   box-shadow: 0 0 15px rgba(34, 197, 94, 0.7);
   transform: translateY(-2px);
 }
+
+/* ===== About Page Styles ===== */
+.about-page {
+  font-family: 'Poppins', sans-serif;
+  color: #1a1a1a;
+}
+
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.section.alt-bg {
+  background: #f3fdf3;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #228b22;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+.contact-section {
+  background: #e8fbe8;
+}
+
+.contact-info {
+  margin-top: 1.5rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
