@@ -63,7 +63,11 @@ const Home = () => {
                 </div>
             </div>
             
-
+                     <div className="explore-section">
+                <button className="explore-btn"
+                onClick={handleExplore}>Explore Our Farms</button>
+            
+            </div>  
               
             </section>
     )
