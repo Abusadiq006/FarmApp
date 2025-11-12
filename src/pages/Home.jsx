@@ -24,41 +24,47 @@ const Home = () => {
     return (
         <section className="home fade-in">
             <div className="intro-section">
-                <h1 className="intro-title">Welcome to Green Valley Farm Estate</h1>
-                    <p className="intro-text">
-                    At Green Farm, we believe in growing fresh, sustainable, and organic
-                    produce that nourishes both people and the planet. Our commitment is to
-                    eco-friendly farming practices that ensure a greener tomorrow.
-                </p>
-            </div>
-
-            <div className="video-grid">
-                {sections.map((item, index) => (
-                    <div key={index} 
-                    className={`video-card diagonal delay-${index}`}>
-                        <video 
-                        src={item.video}
-                        muted 
-                        loop
-                        preload="none"
-                        className="video-element"
-                        onMouseEnter={(e) => e.target.play()}
-                        onMouseLeave={(e) => e.target.pause()}></video>
-                        <div className="overlay"></div>
-                        <div className="video-content">
-                            <h2>{item.title}</h2>
-                            <p>{item.desc}</p>
-                        </div>
-                    </div>
-                ))}
-            </div>
-            
-
-            <div className="explore-section">
+                <div className="intro-content">
+                    <h1 className="intro-title">Welcome to Green Valley Farm Estate</h1>
+                        <p className="intro-text">
+                        At Green Farm, we believe in growing fresh, sustainable, and organic
+                        produce that nourishes both people and the planet. Our commitment is to
+                        eco-friendly farming practices that ensure a greener tomorrow.
+                    </p>
+                    <div className="explore-section">
                 <button className="explore-btn"
                 onClick={handleExplore}>Explore Our Farms</button>
             
-            </div>    
+            </div>  
+                </div>
+                
+            </div>
+
+            <div className="video-section">
+                <div className="video-grid">
+                    {sections.map((item, index) => (
+                        <div key={index} 
+                        className={`video-card diagonal delay-${index}`}>
+                            <video 
+                            src={item.video}
+                            muted 
+                            loop
+                            preload="none"
+                            className="video-element"
+                            onMouseEnter={(e) => e.target.play()}
+                            onMouseLeave={(e) => e.target.pause()}></video>
+                            <div className="overlay"></div>
+                            <div className="video-content">
+                                <h2>{item.title}</h2>
+                                <p>{item.desc}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+            
+
+              
             </section>
     )
 }

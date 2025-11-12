@@ -120,6 +120,71 @@
   border-top: 2px solid var(--primary-green);
 }
 
+/* Intro Section */
+.intro-section {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #0a1f0f 0%, #163a1d 40%, #1d5e2e 100%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05), transparent 60%);
+  pointer-events: none;
+}
+
+.intro-content {
+  max-width: 800px;
+  z-index: 2;
+}
+
+.intro-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.explore-btn {
+  background: linear-gradient(90deg, #26c75f, #15a84b);
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.9rem 2.2rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.explore-btn:hover {
+  transform: scale(1.08);
+  background: linear-gradient(90deg, #2ee16d, #18b854);
+  box-shadow: 0 0 25px rgba(38, 199, 95, 0.4);
+}
+
+.video-section {
+  padding: 6rem 2rem;
+  background: #f4f9f4;
+}
+
 /* ===== Home Page ===== */
 .home {
   min-height: 100vh;
@@ -149,7 +214,7 @@
 }
 
 .video-card {
-  position: relative;
+   position: relative;
   width: 100%;
   max-width: 440px;
   height: 280px;
@@ -158,18 +223,20 @@
   transform: rotate(var(--angle, -3deg)) translateZ(0);
   transition: transform 0.4s ease, box-shadow 0.5s ease;
   cursor: pointer;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  background-color: #000;
-  isolation: isolate;
+  box-shadow: 0 10px 25px r
+}
+
+.video-card:nth-child(odd) {
+  transform: rotate(-3deg) translateY(20px);
 }
 
 .video-card:nth-child(even) {
-  --angle: 3deg;
+  transform: rotate(-3deg) translateY(-20px);
 }
 
 .video-card:hover {
-  transform: scale(1.08) rotate(0deg) translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+  transform: perspective(1000px) scale(1.05) rotateX(2deg) rotateY(5deg) ;
+  box-shadow: 0 12px 30px rgba(0, 255, 100, 0.2);
   z-index: 5;
 }
 
@@ -177,17 +244,15 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(75%);
-  transform: scale(1.05);
+  filter: brightness(90%);
+  z-index: 0;
+  position: relative;
   transition: transform 0.5s ease, filter 0.5s ease;
 }
 
 .overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4), transparent 40%);
-  opacity: 0.9;
-  transition: opacity 0.4s ease;
+  z-index: 0;
+  opacity: 0.4;
 }
 
 .video-card:hover .overlay {
@@ -216,14 +281,23 @@
   opacity: 0.85;
 }
 
+.video-card:hover .video-element {
+  transform: scale(1.1);
+  filter: brightness(100%);
+}
+
+.video-card:hover .overlay {
+  opacity: 0.25;
+}
+
 /* Add smooth staggering animation */
 @keyframes diagonalIn {
-  from { opacity: 0; transform: translateY(30px) rotate(-4deg); }
-  to { opacity: 1; transform: translateY(0) rotate(0deg); }
+  from { opacity: 0; transform: translateY(50px) rotate(-4deg); }
+  to { opacity: 1; transform: translateY(0) rotate(var(--angle, 0deg)); }
 }
 
 .video-card {
-  animation: diagonalIn 0.8s ease forwards;
+  animation: floatIn 0.8s ease forwards;
 }
 .video-card:nth-child(1) { animation-delay: 0.1s; }
 .video-card:nth-child(2) { animation-delay: 0.2s; }
@@ -241,6 +315,10 @@
   }
   .video-card {
     height: 220px;
+    transform: rotate(0deg) translateY(0);
+  }
+  .video-card:hover {
+    transform: scale(1.05) rotate(0deg);
   }
   .video-content h2 {
     font-size: 1.3rem;
