@@ -180,10 +180,7 @@
   box-shadow: 0 0 25px rgba(38, 199, 95, 0.4);
 }
 
-.video-section {
-  padding: 6rem 2rem;
-  background: #f4f9f4;
-}
+
 
 /* ===== Home Page ===== */
 .home {
@@ -315,7 +312,7 @@
   }
   .video-card {
     height: 220px;
-    transform: rotate(0deg) translateY(0);
+    transform: rotate(0deg) translateY(1);
   }
   .video-card:hover {
     transform: scale(1.05) rotate(0deg);
@@ -428,13 +425,14 @@
 .home h1 {
   color: var(--dark-green);
   font-size: 2.5rem;
+  margin: 1 auto;
   margin-bottom: 1rem;
 }
 
 .home p {
   font-size: 1.1rem;
   max-width: 700px;
-  margin: 0 auto;
+  margin: 1 auto;
   color: var(--text-dark);
 }
 
@@ -498,34 +496,6 @@
   border-radius: var(--radius);
 }
 
-/* ===== Dashboard ===== */
-.dashboard {
-  padding: 3rem;
-}
-
-.dashboard h2 {
-  color: var(--dark-green);
-  margin-bottom: 1rem;
-}
-
-.dashboard-content {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.dashboard-card {
-  background: var(--white);
-  border: 1px solid var(--primary-green);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  text-align: center;
-  transition: transform var(--transition-speed);
-}
-
-.dashboard-card:hover {
-  transform: translateY(-5px);
-}
 
 /* ===== About Page ===== */
 .about {
@@ -575,13 +545,6 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ==== Dashboard Layout ==== */
-.dashboard {
-  padding: 3rem 1.5rem;
-  background: linear-gradient(180deg, #f8fff8 0%, #f2fff5 100%);
-  min-height: 100vh;
-}
-
 /* GENERAL DASHBOARD LAYOUT */
 .dashboard {
   width: 100%;
@@ -590,6 +553,39 @@
   min-height: 100vh;
   padding-bottom: 4rem;
 }
+
+.dashboard h2 {
+  color: var(--dark-green);
+  margin-bottom: 1rem;
+}
+
+.dashboard-content {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.dashboard-card {
+  background: var(--white);
+  border: 1px solid var(--primary-green);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform var(--transition-speed);
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ==== Dashboard Layout ==== */
+.dashboard {
+  padding: 3rem 1.5rem;
+  background: linear-gradient(180deg, #f8fff8 0%, #f2fff5 100%);
+  min-height: 100vh;
+}
+
+
 
 /* Section Titles */
 .section-title {
@@ -644,6 +640,49 @@
 .farm-card p {
   font-size: 0.95rem;
   color: #4b5563;
+}
+
+/* ==== Card Grid ==== */
+.card-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  justify-items: center;
+  margin-bottom: 4rem;
+}
+
+/* ==== Farms Cards ==== */
+.farm-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  max-width: 320px;
+  transform: translateY(0);
+}
+
+.farm-card:hover img {
+  transform: scale(1.1);
+}
+
+
+/* ==== Farm Info ==== */
+.farm-card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #14532d;
+  margin-top: 1rem;
+}
+
+.farm-card p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  padding: 0.5rem 1rem 1.5rem;
+  line-height: 1.5;
 }
 
 /* LESSON MODAL OVERLAY */
@@ -712,62 +751,6 @@
   background: #2f855a;
   margin: 0.75rem auto 0;
   border-radius: 2px;
-}
-
-/* ==== Card Grid ==== */
-.card-grid {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  justify-items: center;
-  margin-bottom: 4rem;
-}
-
-/* ==== Farms Cards ==== */
-.farm-card {
-  background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: all 0.4s ease;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  max-width: 320px;
-  transform: translateY(0);
-}
-
-.farm-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15);
-}
-
-/* ==== Farm Images ==== */
-.farm-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.farm-card:hover img {
-  transform: scale(1.1);
-}
-
-
-/* ==== Farm Info ==== */
-.farm-card h3 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #14532d;
-  margin-top: 1rem;
-}
-
-.farm-card p {
-  font-size: 0.95rem;
-  color: #4b5563;
-  padding: 0.5rem 1rem 1.5rem;
-  line-height: 1.5;
 }
 
 /* ==== Responsive ==== */
