@@ -141,46 +141,53 @@
 /* Video Grid */
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 3rem;
   justify-items: center;
+  perspective: 1200px;
+  margin-top: 4rem;
 }
 
 .video-card {
   position: relative;
   width: 100%;
-  max-width: 420px;
-  height: 260px;
+  max-width: 440px;
+  height: 280px;
   border-radius: 1.5rem;
   overflow: hidden;
-  transform: rotate(-3deg);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform: rotate(var(--angle, -3deg)) translateZ(0);
+  transition: transform 0.4s ease, box-shadow 0.5s ease;
   cursor: pointer;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  background-color: #000;
+  isolation: isolate;
 }
 
 .video-card:nth-child(even) {
-  transform: rotate(3deg);
+  --angle: 3deg;
 }
 
 .video-card:hover {
-  transform: scale(1.05) rotate(0deg);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+  transform: scale(1.08) rotate(0deg) translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+  z-index: 5;
 }
 
 .video-element {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: all 0.3s ease;
+  filter: brightness(75%);
+  transform: scale(1.05);
+  transition: transform 0.5s ease, filter 0.5s ease;
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent 60%);
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4), transparent 40%);
+  opacity: 0.9;
+  transition: opacity 0.4s ease;
 }
 
 .video-card:hover .overlay {
@@ -189,20 +196,58 @@
 
 .video-content {
   position: absolute;
-  bottom: 15px;
+  bottom: 20px;
   left: 20px;
   color: white;
   text-align: left;
+  z-index: 2;
 }
 
 .video-content h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin-bottom: 0.3rem;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
 }
 
 .video-content p {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   opacity: 0.85;
+}
+
+/* Add smooth staggering animation */
+@keyframes diagonalIn {
+  from { opacity: 0; transform: translateY(30px) rotate(-4deg); }
+  to { opacity: 1; transform: translateY(0) rotate(0deg); }
+}
+
+.video-card {
+  animation: diagonalIn 0.8s ease forwards;
+}
+.video-card:nth-child(1) { animation-delay: 0.1s; }
+.video-card:nth-child(2) { animation-delay: 0.2s; }
+.video-card:nth-child(3) { animation-delay: 0.3s; }
+.video-card:nth-child(4) { animation-delay: 0.4s; }
+.video-card:nth-child(5) { animation-delay: 0.5s; }
+.video-card:nth-child(6) { animation-delay: 0.6s; }
+.video-card:nth-child(7) { animation-delay: 0.7s; }
+.video-card:nth-child(8) { animation-delay: 0.8s; }
+
+/* Responsive Adjustment */
+@media (max-width: 768px) {
+  .video-grid {
+    gap: 1.8rem;
+  }
+  .video-card {
+    height: 220px;
+  }
+  .video-content h2 {
+    font-size: 1.3rem;
+  }
+  .video-content p {
+    font-size: 0.85rem;
+  }
 }
 
 /* Expore Button */

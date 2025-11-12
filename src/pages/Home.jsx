@@ -12,13 +12,13 @@ const Home = () => {
 
     const sections = [
         { title: "Farming", video: "/videos/crops.mp4", desc: "Sustainable crop cultivation for a greener world."},
-        { title: "chicken", video: "/videos/chicken.mp4"},
-        { title: "cows", video: "/videos/cows.mp4"},
-        { title: "farmhouse", video: "/videos/farmhouse.mp4"},
-        { title: "fish", video: "/videos/fish.mp4"},
-        { title: "flowers", video: "/videos/flowers.mp4"},
-        { title: "horse", video: "/videos/horse.mp4"},
-        {title: "sheeps", video: "/videos/sheeps.mp4"}
+        { title: "chicken", video: "/videos/chicken.mp4", desc: "Free-range poultry farming with ethical care." },
+        { title: "cows", video: "/videos/cows.mp4", desc: "Healthy livestock grazing on open pastures." },
+        { title: "farmhouse", video: "/videos/farmhouse.mp4", desc: "Dairy and beef farming driven by sustainability." },
+        { title: "fish", video: "/videos/fish.mp4", desc: "Modern aquaculture practices for clean waters." },
+        { title: "flowers", video: "/videos/flowers.mp4",  desc: "Vibrant blossoms cultivated with precision." },
+        { title: "horse", video: "/videos/horse.mp4", desc: "Graceful horses raised with care and passion." },
+        {title: "sheeps", video: "/videos/sheeps.mp4",  desc: "Eco-friendly living spaces in harmony with nature." }
     ]
     
     return (
