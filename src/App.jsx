@@ -12,6 +12,8 @@ import SignUp from './pages/SignUp'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import About from './pages/About'
+import PaymentSuccess from "./pages/PaymentSuccess"
+import Buy from './pages/Buy'
 
 const App = () => {
   return (
@@ -26,6 +28,8 @@ const App = () => {
             <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/payment-success" element={<PaymentSuccess />} />
+            <Route path='/buy' element={<Buy />} />
             <Route path="/about" element={<About />} />
           </Routes>
         </main>
