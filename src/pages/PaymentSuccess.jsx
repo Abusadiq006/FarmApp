@@ -12,7 +12,7 @@ const PaymentSuccess = () => {
     }, [])
 
     const verifyPayment = async(reference) => {
-        const res = await fetch(`/api/payment/verify/${reference}`)
+        const res = await fetch(`http://localhost:8080/api/payment/verify/${reference}`)
         const data = await res.json()
         setMessage(data.status === 'success'?'Payment Successful':'Payment Failed')
     }
