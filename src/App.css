@@ -109,3 +109,24 @@ footer {
   from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+.intro-content {
+  text-align: center;
+  color: white; /* Fixes the invisibility */
+  padding: 40px;
+}
+
+.intro-title {
+  color: #ffffff !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.intro-text {
+  color: #f0f0f0 !important;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
