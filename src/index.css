@@ -67,8 +67,9 @@
   align-items: center;
   justify-content: space-between;
   background-color: var(--primary-green);
-  padding: 0.8rem 2rem;
+  padding: 0 10%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: 80px;
 }
 
 .navbar-logo {
@@ -143,35 +144,38 @@
 }
 
 .intro-content {
-  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 20px;
+  width: 100%;
+  max-height: 400px;
   z-index: 2;
 }
 
 .intro-title {
   font-size: 3.5rem;
-  font-weight: 800;
-  letter-spacing: 1px;
-  margin-bottom: 1rem;
-  text-shadow: 0 4px 20px rgba(163, 154, 154, 0.5);
+  color: #ffffff;
+  margin-bottom: 20px;
+  max-width: 800px;        /* Prevents text from stretching too wide */
 }
 
 .intro-text {
   font-size: 1.2rem;
+  color: #f0f0f0;
+  max-width: 600px;        /* Keeps the paragraph readable and centered */
+  margin-bottom: 40px;     /* Space before the button */
   line-height: 1.6;
-  margin-bottom: 2rem;
-  opacity: 0.9;
 }
 
 .explore-btn {
-  background: linear-gradient(90deg, #26c75f, #15a84b);
-  border: none;
-  color: #fff;
-  font-size: 1.1rem;
-  font-weight: 600;
-  padding: 0.9rem 2.2rem;
-  border-radius: 2rem;
+  /* Ensure the button doesn't have weird float or margin-left */
+  margin: 0 auto; 
+  padding: 15px 40px;
+  font-weight: bold;
   cursor: pointer;
-  transition: all 0.4s ease;
 }
 
 .explore-btn:hover {
