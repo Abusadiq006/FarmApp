@@ -30,4 +30,10 @@ const Buy = () => {
     );
 };
 
+const res = await fetch(`${import.meta.env.VITE_API_URL}/api/payment/init`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json'},
+    body: JSON.stringify({ email, amount })
+})
+
 export default Buy;
